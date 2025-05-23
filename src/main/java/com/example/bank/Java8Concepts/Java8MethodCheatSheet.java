@@ -133,6 +133,7 @@ public class Java8MethodCheatSheet {
                 .findAny()
                 .orElseThrow(()->new IllegalArgumentException("Employee not found "));
 
+
         // System.out.println(findAnyElement);
 
         //anyMatch(Predicate) , allMatch(Predicate) , noneMatch(Predicate)
@@ -182,6 +183,16 @@ public class Java8MethodCheatSheet {
 //        noneMatch(Predicate)
 //        limit(long maxSize)
 //        skip(long n)
+
+
+        String[] strArray = {"spring", "boot", "angular", "ruby", "microservices"};
+
+        String longestString = Arrays.stream(strArray)
+                .reduce((word1, word2) -> word1.length() > word2.length() ? word1 : word2).get();
+        System.out.println(longestString);
+
+        int[] arr = {1,2,3,4,5};
+        Stream<Integer> arr2 = Arrays.stream(arr).boxed();
 
 
     }
