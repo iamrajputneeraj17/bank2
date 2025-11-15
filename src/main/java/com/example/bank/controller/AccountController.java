@@ -40,6 +40,12 @@ public class AccountController {
         this.accountService = accountService;
     }
 
+        @GetMapping("/getBy")
+    public String getAccountById()
+    {
+       return "Working";
+    }
+
 
     @PostMapping("/createForm")
     public ResponseEntity<FormDataDto> addForm(@RequestBody FormDataDto accountDto)
